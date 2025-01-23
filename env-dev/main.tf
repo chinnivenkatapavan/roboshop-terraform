@@ -1,5 +1,5 @@
 env = "dev"
-components = {
+component = {
          frontend = {
              name = "frontend"
              }
