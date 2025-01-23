@@ -1,5 +1,3 @@
-	git pull
-
 dev-apply:
 	git pull
 	rm -f .terraform/terraform.tfstate
