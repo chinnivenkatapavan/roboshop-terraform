@@ -1,2 +1,2 @@
-dev-apply:
-          git pull
+                  dev-apply:
+                  git pull
