@@ -1,4 +1,3 @@
-default:
 	git pull
 
 dev-apply:
