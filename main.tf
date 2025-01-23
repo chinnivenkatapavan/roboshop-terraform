@@ -10,7 +10,7 @@
 
 module "component"{
     for_each = var.component
-    source = "./env-dev"
+    source = "./modules/vm"
     component = each.value["name"]
     env       = var.env
 }
