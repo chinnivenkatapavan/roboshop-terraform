@@ -1,6 +1,5 @@
 variable "env" {
-  default = "qa"
+ // default = "qa"
 }
 variable "component" {}
 variable "token" {}
-variable "container" {}

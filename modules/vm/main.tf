@@ -94,7 +94,7 @@ resource "azurerm_virtual_machine" "main" {
 }
 
 locals {
-  component = var.component ? "${var.component}-docker" : var.component
+  component = var.container ? "${var.component}-docker" : var.component
 }
 
 resource "null_resource" "ansible" {
