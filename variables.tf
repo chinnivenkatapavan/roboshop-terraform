@@ -3,3 +3,4 @@ variable "env" {
 }
 variable "component" {}
 variable "token" {}
+variable "container" {}
