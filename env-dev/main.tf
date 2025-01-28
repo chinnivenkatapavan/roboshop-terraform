@@ -2,30 +2,43 @@
 
 component = {
          frontend = {
-             name = "frontend"
+           name = "frontend"
+           container = true
              }
          mongodb = {
-             name = "mongodb"
+           name = "mongodb"
+           container = false
              }
          catalogue = {
-             name = "catalogue"
+           name = "catalogue"
+           container = true
              }
          user = {
-             name = "user"
+           name = "user"
+           container = true
              }
          cart = {
-             name = "cart"
+           name = "cart"
+           container = true
              }
          mysql = {
-             name = "mysql"
+           name = "mysql"
+           container = false
              }
          shipping = {
-             name = "shipping"
+           name = "shipping"
+           container = true
              }
          payment = {
-             name = "payment"
+           name = "payment"
+           container = true
              }
          rabbitmq = {
-             name = "rabbitmq"
+           name = "rabbitmq"
+           container = false
              }
+         redis = {
+           name = "redis"
+           container = false
+         }
      }

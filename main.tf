@@ -13,4 +13,5 @@ module "component"{
     source = "./modules/vm"
     component = each.value["name"]
     env       = var.env
+    container = each.value["container"]
 }
