@@ -1,6 +1,15 @@
+resource "azurerm_public_ip" "main" {
+  name                = "${var.component}-ip"
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
+  allocation_method   = "Static"
+
+  tags = {
+    component = var.component
+  }
+}
+
 resource "azurerm_network_interface" "main" {
-
-
   name                = "${var.component}-nic"
   location            = data.azurerm_resource_group.main.location
   resource_group_name = data.azurerm_resource_group.main.name
@@ -40,18 +49,16 @@ resource "azurerm_network_interface_security_group_association" "main" {
   network_security_group_id = azurerm_network_security_group.main.id
 }
 
-resource "azurerm_public_ip" "main" {
-  name                = "${var.component}-ip"
+resource "azurerm_dns_a_record" "main" {
+  name                = "${var.component}-dev"
+  zone_name           = "azdevops2704.online"
   resource_group_name = data.azurerm_resource_group.main.name
-  location            = data.azurerm_resource_group.main.location
-  allocation_method   = "Static"
-
-  tags = {
-    component = var.component
-  }
+  ttl                 = 10
+  records             = [azurerm_network_interface.main.private_ip_address]
 }
 
 resource "azurerm_virtual_machine" "main" {
+  depends_on = [azurerm_network_interface_security_group_association.main, azurerm_dns_a_record.main]
   name                  = var.component
   location              = data.azurerm_resource_group.main.location
   resource_group_name   = data.azurerm_resource_group.main.name
@@ -84,14 +91,6 @@ resource "azurerm_virtual_machine" "main" {
   tags = {
     component = var.component
   }
-}
-
-resource "azurerm_dns_a_record" "main" {
-  name                = "${var.component}-dev"
-  zone_name           = "azdevops2704.online"
-  resource_group_name = data.azurerm_resource_group.main.name
-  ttl                 = 10
-  records             = [azurerm_network_interface.main.private_ip_address]
 }
 
 resource "null_resource" "ansible" {
