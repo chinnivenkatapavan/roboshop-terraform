@@ -93,9 +93,9 @@ resource "azurerm_virtual_machine" "main" {
   }
 }
 
-locals {
-  component = var.container ? "${var.component}-docker" : var.component
-}
+//locals {
+//  component = var.container ? "${var.component}-docker" : var.component
+//}
 
 resource "null_resource" "ansible" {
 
@@ -113,7 +113,7 @@ resource "null_resource" "ansible" {
     inline = [
       "sudo dnf install python3.12-pip -y",
       "sudo pip3.12 install ansible",
-      "ansible-pull -i localhost, -U https://github.com/chinnivenkatapavan/roboshop-ansible.git roboshop.yml -e app_name=${local.component} -e ENV=${var.env} -e token=${var.token}"
+      "ansible-pull -i localhost, -U https://github.com/chinnivenkatapavan/roboshop-ansible.git roboshop.yml -e app_name=${var.component} -e ENV=${var.env} -e token=${var.token}"
     ]
   }
 }
