@@ -1,5 +1,4 @@
-variable "env" {
- // default = "qa"
-}
-variable "component" {}
+variable "env" {}
+# variable "component" {}
 variable "token" {}
+variable "database" {}
