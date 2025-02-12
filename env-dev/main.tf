@@ -43,7 +43,7 @@ env = "dev"
 #   }
 # }
 
-database = {
+databases = {
   mongodb = {
     name      = "mongodb"
     container = false

@@ -1,5 +1,5 @@
 module "database" {
-  for_each    = var.database
+  for_each    = var.databases
   source      = "./modules/vm"
   component   = each.value["name"]
   env         = var.env
