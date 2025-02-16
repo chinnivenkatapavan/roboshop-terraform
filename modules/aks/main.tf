@@ -12,7 +12,7 @@ resource "azurerm_kubernetes_cluster" "main" {
     min_count = 1
     max_count = 10
     auto_scaling_enabled = true
-    pod_subnet_id = "/subscriptions/b3406e49-0e16-456d-a3bb-c324f1dfb0d5/resourceGroups/project-setup-1/providers/Microsoft.Network/virtualNetworks/Project-Network/subnets/default"
+    #pod_subnet_id = "/subscriptions/b3406e49-0e16-456d-a3bb-c324f1dfb0d5/resourceGroups/project-setup-1/providers/Microsoft.Network/virtualNetworks/Project-Network/subnets/default"
     vnet_subnet_id = "/subscriptions/b3406e49-0e16-456d-a3bb-c324f1dfb0d5/resourceGroups/project-setup-1/providers/Microsoft.Network/virtualNetworks/Project-Network/subnets/default"
 
   }
@@ -20,6 +20,8 @@ resource "azurerm_kubernetes_cluster" "main" {
   aci_connector_linux {
     subnet_name = "/subscriptions/b3406e49-0e16-456d-a3bb-c324f1dfb0d5/resourceGroups/project-setup-1/providers/Microsoft.Network/virtualNetworks/Project-Network/subnets/default"
   }
+
+
 
   identity {
     type = "SystemAssigned"
