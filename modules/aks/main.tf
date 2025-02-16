@@ -11,6 +11,7 @@ resource "azurerm_kubernetes_cluster" "main" {
     vm_size    = "Standard_D2_v2"
     min_count = 1
     max_count = 10
+    auto_scaling_enabled = true
   }
 
   aci_connector_linux {
