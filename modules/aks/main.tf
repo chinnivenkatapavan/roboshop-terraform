@@ -23,8 +23,8 @@ resource "azurerm_kubernetes_cluster" "main" {
 
   network_profile {
     network_plugin = "azure"
-    service_cidr = "10.100.0.0/24"
-    dns_service_ip = "10.100.0.100"
+    service_cidr = "10.100.0.0/26"
+    dns_service_ip = "10.100.0.101"
   }
 
 
