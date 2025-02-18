@@ -1,11 +1,11 @@
-# module "database" {
-#   for_each    = var.databases
-#   source      = "./modules/vm"
-#   component   = each.value["name"]
-#   env         = var.env
-#   token = var.token
-#   container   = each.value["container"]
-# }
+module "database" {
+  for_each    = var.databases
+  source      = "./modules/vm"
+  component   = each.value["name"]
+  env         = var.env
+  token = var.token
+  container   = each.value["container"]
+}
 
 # module "component" {
 #     for_each  = var.component
