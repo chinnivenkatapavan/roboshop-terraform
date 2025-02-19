@@ -13,19 +13,19 @@ resource "azurerm_kubernetes_cluster" "main" {
     min_count = 1
     max_count = 10
     #pod_subnet_id = "/subscriptions/b3406e49-0e16-456d-a3bb-c324f1dfb0d5/resourceGroups/project-setup-1/providers/Microsoft.Network/virtualNetworks/Project-Network/subnets/default"
-    vnet_subnet_id = "/subscriptions/b3406e49-0e16-456d-a3bb-c324f1dfb0d5/resourceGroups/project-setup-1/providers/Microsoft.Network/virtualNetworks/Project-Network/subnets/default"
+  #  vnet_subnet_id = "/subscriptions/b3406e49-0e16-456d-a3bb-c324f1dfb0d5/resourceGroups/project-setup-1/providers/Microsoft.Network/virtualNetworks/Project-Network/subnets/default"
 
   }
 
-  aci_connector_linux {
-    subnet_name = "/subscriptions/b3406e49-0e16-456d-a3bb-c324f1dfb0d5/resourceGroups/project-setup-1/providers/Microsoft.Network/virtualNetworks/Project-Network/subnets/default"
-  }
-
-  network_profile {
-    network_plugin = "azure"
-    service_cidr = "10.100.0.0/24"
-    dns_service_ip = "10.100.0.100"
-  }
+  # aci_connector_linux {
+  #   subnet_name = "/subscriptions/b3406e49-0e16-456d-a3bb-c324f1dfb0d5/resourceGroups/project-setup-1/providers/Microsoft.Network/virtualNetworks/Project-Network/subnets/default"
+  # }
+  #
+  # network_profile {
+  #   network_plugin = "azure"
+  #   service_cidr = "10.100.0.0/24"
+  #   dns_service_ip = "10.100.0.100"
+  # }
 
   identity {
     type = "SystemAssigned"
