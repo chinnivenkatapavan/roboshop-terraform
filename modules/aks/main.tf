@@ -24,7 +24,7 @@ resource "azurerm_kubernetes_cluster" "main" {
   network_profile {
     network_plugin = "azure"
     service_cidr = "10.0.1.0/24"
-    dns_service_ip = "10.0.0.150"
+    dns_service_ip = "10.0.0.100"
   }
 
   identity {
