@@ -1,11 +1,4 @@
-terraform {
-  required_providers {
-    helm = {
-      source  = "hashicorp/helm"
-      version = "2.16.1"
-    }
-  }
-}
+
 resource "null_resource" "kubeconfig" {
   depends_on = [azurerm_kubernetes_cluster.main]
   provisioner "local-exec" {
