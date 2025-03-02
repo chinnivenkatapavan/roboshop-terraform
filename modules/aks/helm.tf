@@ -4,7 +4,7 @@ resource "null_resource" "kubeconfig" {
   provisioner "local-exec" {
     command = <<EOF
 az aks get-credentials --resource-group ${data.azurerm_resource_group.main.name} --name main --overwrite-existing
-kubectl apply -f /opt/vault-token.yml
+# kubectl apply -f /opt/vault-token.yml
 EOF
   }
 }
