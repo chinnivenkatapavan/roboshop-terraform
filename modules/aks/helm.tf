@@ -34,7 +34,7 @@ resource "null_resource" "argocd" {
   provisioner "local-exec" {
     command = <<EOF
 kubectl apply -f ${path.module}/files/argocd-ns.yml
-kubectl apply -f ${path.module}/files/argocd.yml -n argocd
+kubectl apply -f ${path.module}/files/argocd.yml -n argocd   #"-n argocd" adding name to pods with argocd
 EOF
   }
 }
